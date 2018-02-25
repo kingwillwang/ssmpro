@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置整合mybatis-->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath*:jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--配置数据库的连接池-->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <!-- 配置链接属性-->
+        <property name="driverClassName" value="${driverClasss}"/>
+        <property name="url" value="${jdbcUrl}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+
+        <!-- 初始化连接大小 -->
+        <property name="initialSize" value="${initialSize}"/>
+        <!-- 连接池最大数量 -->
+        <property name="maxActive" value="${maxActive}"/>
+        <!-- 连接池最大空闲 -->
+        <property name="maxIdle" value="${maxIdle}"/>
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="${minIdle}"/>
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="${maxWait}"/>
+    </bean>
+
+    <!-- 配置sqlSessionFactory对象-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 注入数据库连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 配置Mybatisq全局文件：-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!-- 扫描entity包-->
+        <property name="typeAliasesPackage" value="com.hk.entity"/>
+        <!-- 扫描sql配置文件-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
+
+    <!-- 配置扫描DAO接口包 动态实现Dao接口 并且注入到Spring容器中-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 注入sqlSessionFactory-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!-- 给出扫描Dao接口包-->
+        <property name="basePackage" value="com.hk.dao"/>
+    </bean>
+</beans>
