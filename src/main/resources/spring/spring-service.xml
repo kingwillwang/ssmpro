@@ -12,7 +12,7 @@
 
     <!--spring service配置-->
     <!-- 扫描service包下面所有使用注解的的类型-->
-    <context:component-scan base-package="com.hk.service"/>
+    <context:component-scan base-package="com.will.service"/>
 
     <!-- 配置事务管理器-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

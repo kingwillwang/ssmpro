@@ -1,0 +1,7 @@
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var basePath = [[${#httpServletRequest.getScheme() + "://" + #httpServletRequest.getServerName() + ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()}]];
+        /*]]>*/
+    </script>
+</th:block>

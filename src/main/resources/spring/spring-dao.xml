@@ -40,7 +40,7 @@
         <!-- 配置Mybatisq全局文件：-->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <!-- 扫描entity包-->
-        <property name="typeAliasesPackage" value="com.hk.entity"/>
+        <property name="typeAliasesPackage" value="com.will.entity"/>
         <!-- 扫描sql配置文件-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
@@ -50,6 +50,6 @@
         <!-- 注入sqlSessionFactory-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 给出扫描Dao接口包-->
-        <property name="basePackage" value="com.hk.dao"/>
+        <property name="basePackage" value="com.will.dao"/>
     </bean>
 </beans>

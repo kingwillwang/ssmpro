@@ -24,18 +24,18 @@
     -->
     <mvc:default-servlet-handler/>
 
-    <context:component-scan base-package="com.hk.controller" />
+    <context:component-scan base-package="com.will.controller" />
 
     <!--3：配置jsp显示ViewResolver -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/page/"/>
-        <property name="suffix" value=".html"/>
-    </bean>
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+        <!--<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>-->
+        <!--<property name="prefix" value="/WEB-INF/page/"/>-->
+        <!--<property name="suffix" value=".html"/>-->
+    <!--</bean>-->
 
     <!-- 使用thymeleaf解析 -->
     <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
-        <property name="prefix" value="/WEB-INF/page/" />
+        <property name="prefix" value="/" />
         <property name="suffix" value=".html" />
         <property name="templateMode" value="HTML5" />
         <property name="cacheable" value="false" />
@@ -44,6 +44,11 @@
 
     <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
         <property name="templateResolver" ref="templateResolver" />
+        <property name="additionalDialects">
+            <set>
+                <bean class="nz.net.ultraq.thymeleaf.LayoutDialect"/>
+            </set>
+        </property>
     </bean>
 
     <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
@@ -51,5 +56,9 @@
         <property name="characterEncoding" value="UTF-8"/>
     </bean>
 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="maxUploadSize" value="5242440"/>
+    </bean>
 
 </beans>

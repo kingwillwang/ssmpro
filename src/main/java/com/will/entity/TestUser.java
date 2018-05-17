@@ -1,4 +1,4 @@
-package com.hk.entity;
+package com.will.entity;
 
 public class TestUser {
     private String userName;

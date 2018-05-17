@@ -1,8 +1,8 @@
-package com.hk.service.impl;
+package com.will.service.impl;
 
-import com.hk.dao.TestUserDao;
-import com.hk.entity.TestUser;
-import com.hk.service.TestUserService;
+import com.will.dao.TestUserDao;
+import com.will.entity.TestUser;
+import com.will.service.TestUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

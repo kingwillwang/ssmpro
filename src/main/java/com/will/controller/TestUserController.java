@@ -1,7 +1,7 @@
-package com.hk.controller;
+package com.will.controller;
 
-import com.hk.entity.TestUser;
-import com.hk.service.TestUserService;
+import com.will.entity.TestUser;
+import com.will.service.TestUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

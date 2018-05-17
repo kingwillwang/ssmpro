@@ -1,6 +1,6 @@
-package com.hk.dao;
+package com.will.dao;
 
-import com.hk.entity.TestUser;
+import com.will.entity.TestUser;
 
 import java.util.List;
 

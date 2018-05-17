@@ -1,6 +1,6 @@
-package com.hk.service;
+package com.will.service;
 
-import com.hk.entity.TestUser;
+import com.will.entity.TestUser;
 
 import java.util.List;
 
