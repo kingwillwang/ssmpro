@@ -4,6 +4,7 @@ import com.will.common.Result;
 import com.will.common.ResultGenerator;
 import com.will.utils.DateUtil;
 import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,7 +25,8 @@ import java.util.UUID;
 @RequestMapping("/upload")
 public class UploadController {
 
-    public static final String baseDir = "C:\\websiteFiles\\ssmproImgs";
+    @Value("${baseDir}")
+    private String baseDir;
 
     @RequestMapping(value = "/uploadImg", method = RequestMethod.POST)
     @ResponseBody
