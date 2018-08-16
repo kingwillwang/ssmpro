@@ -9,4 +9,7 @@ public class Constants {
     public static final int RESULT_CODE_BAD_REQUEST = 412;  // 请求失败
     public static final int RESULT_CODE_SERVER_ERROR = 500;  // 服务器错误
 
+    public static final String DEFAULT_SUCCESS_MESSAGE = "SUCCESS";
+    public static final String DEFAULT_FAIL_MESSAGE = "FAIL";
+
 }
