@@ -12,6 +12,9 @@
                 <value>classpath*:set.properties</value>
             </list>
         </property>
+        <property name="fileEncoding">
+            <value>utf-8</value>
+        </property>
     </bean>
 
     <!--配置数据库的连接池-->
