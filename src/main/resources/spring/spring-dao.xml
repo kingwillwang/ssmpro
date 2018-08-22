@@ -35,6 +35,17 @@
         <property name="minIdle" value="${minIdle}"/>
         <!-- 获取连接最大等待时间 -->
         <property name="maxWait" value="${maxWait}"/>
+
+        <!-- 验证链接是否有效的sql语句 -->
+        <property name="validationQuery" value="${validationQuery}"/>
+        <!-- 获取链接之前是否测试链接的可用性 -->
+        <property name="testOnBorrow" value="${testOnBorrow}"/>
+        <!-- 连接被归还到连接池中时是否校验可用 -->
+        <property name="testOnReturn" value="${testOnReturn}"/>
+        <!-- 连接被空闲连接回收器检测回收时否校验可用 -->
+        <property name="testWhileIdle" value="${testWhileIdle}"/>
+        <!-- 在空闲连接回收器执行周期(毫秒) -->
+        <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}"/>
     </bean>
 
     <!-- 配置sqlSessionFactory对象-->
